@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "297671559530",
+    "firebase_url": "https://kaptur-27364-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "kaptur-27364",
+    "storage_bucket": "kaptur-27364.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297671559530:android:498c97a316636a2f46fd13",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297671559530-s8kufe0aeoeim69qk7igmhio4ruv51dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJgowVjyU150Ojq961RmS6QzL6sKymUkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297671559530-s8kufe0aeoeim69qk7igmhio4ruv51dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
