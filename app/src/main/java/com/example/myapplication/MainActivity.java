@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference reference;
     ImageView rImage;
     Uri imageUri;
-//efzfzeef
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
