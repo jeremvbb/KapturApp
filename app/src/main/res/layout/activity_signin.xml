@@ -8,48 +8,17 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/signintext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Register page"
+        android:text="Sign In Page"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style=""
-        android:id="@+id/firstnamelayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:hint="First name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/firstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style=""
-        android:id="@+id/lastnamelayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/firstnamelayout"
-        android:layout_marginTop="20dp"
-        android:hint="Last name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -57,8 +26,8 @@
         android:id="@+id/emaillayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lastnamelayout"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/signintext"
+        android:layout_marginTop="120dp"
         android:hint="email">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -87,7 +56,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnSignIn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordlayout"
@@ -97,33 +66,22 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="75dp"
         android:paddingBottom="10dp"
-        android:text="Register" />
+        android:text="Sign In" />
 
-    <ImageView
-        android:id="@+id/rImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRegister"
-        android:layout_marginTop="-497dp"
-        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/buttontest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+
 
     <TextView
-        android:id="@+id/signIn"
+        android:id="@+id/registerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRegister"
+        android:layout_below="@+id/btnSignIn"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="160dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="160dp"
-        android:text="Sign In"
+        android:text="Register"
         android:textAlignment="center"
         android:textColor="@color/purple_500" />
 

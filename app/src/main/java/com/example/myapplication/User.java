@@ -37,13 +37,7 @@ public class User {
 
         return password;
     }
-    public static String getSalt() throws NoSuchAlgorithmException {
-        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
-        byte[] salt = new byte[32];
-        sr.nextBytes(salt);
-        return Base64.getEncoder().encodeToString(salt);
 
-    }
     public void setPassword(String password) {
 
         this.password = password;
