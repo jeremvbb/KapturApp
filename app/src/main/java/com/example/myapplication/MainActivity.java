@@ -207,6 +207,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Toast.makeText(getApplicationContext(),"Image Uploaded",Toast.LENGTH_SHORT).show();
+                rootnode = FirebaseDatabase.getInstance();
+                reference = rootnode.getReference("Post");
+                String uName = name.getEditText().getText().toString();
+                String uUrl = "image/"+randomkey;
+                String uPlace = "Braga";
+                String uDesc = "Ceci est une description";
+                Post helperclass= new Post(uName,uUrl,uPlace,uDesc);
+                reference.child("post 2").setValue(helperclass);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
