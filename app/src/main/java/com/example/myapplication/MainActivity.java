@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent switchA= new Intent (MainActivity.this, SignIn.class);
                 startActivity(switchA);
+                finish();
             }
         });
         registerBtn.setOnClickListener(new View.OnClickListener() {

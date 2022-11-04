@@ -78,6 +78,7 @@ public class SignIn extends AppCompatActivity {
                                                     = new Intent(SignIn.this,
                                                     HomePage.class);
                                             startActivity(intent);
+                                            finish();
                                         }
 
                                         else {
@@ -99,7 +100,9 @@ public class SignIn extends AppCompatActivity {
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
+                Intent switchA= new Intent (SignIn.this, MainActivity.class);
+                startActivity(switchA);finish();
             }
         });
     }
