@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -34,6 +36,7 @@ public class HomePage extends AppCompatActivity {
     FirebaseDatabase rootnode;
     FirebaseStorage storage;
     DatabaseReference reference;
+    private Button disconnect;
     private ArrayList<PostModal> instaModalArrayList;
     private Handler mHandler;
     private ProgressBar progressBar;
@@ -45,7 +48,22 @@ public class HomePage extends AppCompatActivity {
         // Create a storage reference from our app
         storage= FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-
+        disconnect=findViewById(R.id.btnDisconnected);
+        disconnect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                FirebaseUser mFireUser= mAuth.getCurrentUser();
+                System.out.println(mFireUser);
+                if(mFireUser==null){
+                    Intent intent
+                            = new Intent(HomePage.this,
+                            SignIn.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
 // Create a reference with an initial file path and name
         StorageReference pathReference = storageRef.child("image/");
         mAuth = FirebaseAuth.getInstance();

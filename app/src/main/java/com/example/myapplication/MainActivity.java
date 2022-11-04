@@ -22,6 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 //import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     Button test;
     FirebaseDatabase rootnode;
     FirebaseStorage storage;
+
     FirebaseAuth mAuth;
     StorageReference storageReference;
     DatabaseReference reference;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         password = findViewById(R.id.passwordlayout);
         registerBtn = findViewById(R.id.btnRegister);
+        isConnected();
         connexionLink= findViewById(R.id.signIn);
         connexionLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -224,5 +227,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+    public void isConnected(){
+        FirebaseUser mFireUser= mAuth.getCurrentUser();
+        if(mFireUser!=null){
+            Intent intent
+                    = new Intent(MainActivity.this,
+                    HomePage.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
