@@ -5,13 +5,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +47,14 @@ public class HomePage extends AppCompatActivity {
     TextView test;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        setTheme(android.R.style.Theme_Black_NoTitleBar);
         setContentView(R.layout.activity_homepage);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("KapturApp");
+        setSupportActionBar(toolbar);
         // Create a storage reference from our app
         storage= FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
@@ -86,7 +96,7 @@ public class HomePage extends AppCompatActivity {
                         HashMap<String, Object> dataMap = (HashMap<String, Object>) dataSnapshot.getValue();
                         System.out.println(dataMap);
                         String id = "id";
-                        String media_type = "media_type";
+                        String place = "";
                         String permalink = "permalink";
                         instaModalArrayList = new ArrayList<>();
                         String username = "username";
@@ -98,13 +108,16 @@ public class HomePage extends AppCompatActivity {
                             System.out.println(key + " " + data);
                             HashMap<String, Object> userData = (HashMap<String, Object>) data;
                             System.out.println(userData.get("url"));
+                            username = String.valueOf(userData.get("name"));
                             caption = String.valueOf(userData.get("description"));
+                            place = String.valueOf(userData.get("place"));
                             StorageReference imgRef= storageRef.child(String.valueOf(userData.get("url")));
                             Task<Uri> uri=imgRef.getDownloadUrl();
                             media_url=uri.toString();
                             System.out.println(media_url);
                             String finalCaption = caption;
-
+                            String finalUsername= username;
+                            String finalPlace= place;
                             imgRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
@@ -112,11 +125,11 @@ public class HomePage extends AppCompatActivity {
 
                                     media_url = uri.toString();
                                     System.out.println(media_url);
-                                    PostModal instaModal = new PostModal(id, media_type, permalink, media_url, username, finalCaption, timestamp);
+                                    PostModal instaModal = new PostModal(id, finalPlace, permalink, media_url, finalUsername, finalCaption, timestamp);
 
                                     // below line is use to add modal
                                     // class to our array list.
-                                    instaModalArrayList.add(instaModal);
+
                                     instaModalArrayList.add(instaModal);
 
                                 }
@@ -257,5 +270,11 @@ public class HomePage extends AppCompatActivity {
                 instRV.setAdapter(adapter);
                 progressBar.setVisibility(View.GONE);}
         },1000);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu,menu);
+        return true;
     }
 }

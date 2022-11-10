@@ -24,7 +24,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public PostAdapter(ArrayList<PostModal> instaModalArrayList, Context context) {
         this.instaModalArrayList = instaModalArrayList;
         this.context = context;
-        System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
     }
 
     @NonNull
@@ -42,11 +42,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull PostAdapter.ViewHolder holder, int position) {
         PostModal modal = instaModalArrayList.get(position);
         holder.authorTV.setText(modal.getUsername());
-        if (modal.getMedia_type().equals("IMAGE")) {
-            Picasso.get().load(modal.getMedia_url()).into(holder.postIV);
-        }
+
         Picasso.get().load(modal.getMedia_url()).into(holder.postIV);
         holder.desctv.setText(modal.getCaption());
+        holder.placeTv.setText(modal.getPlace());
+        holder.placeTv.setTextColor(context.getResources().getColor(R.color.grey));
         holder.likeTV.setText("" + modal.getLikesCount() + " likes");
         //Picasso.get().load(modal.getAuthor_url()).into(holder.authorIV);
     }
@@ -61,7 +61,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         //CircleImageView authorIV;
         private TextView authorTV;
         private ImageView postIV;
-        private TextView likeTV, desctv;
+        private TextView likeTV, desctv, placeTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +70,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             postIV = itemView.findViewById(R.id.idIVPost);
             likeTV = itemView.findViewById(R.id.idTVLikes);
             desctv = itemView.findViewById(R.id.idTVPostDesc);
+            placeTv= itemView.findViewById(R.id.idTVPlace);
         }
     }
 }

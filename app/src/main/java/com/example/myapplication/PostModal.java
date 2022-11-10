@@ -9,6 +9,7 @@ public class PostModal {
         private String permalink;
         private String media_url;
         private String username;
+        private String place;
         private String caption;
         private String timestamp;
 
@@ -27,6 +28,13 @@ public class PostModal {
         public void setLikesCount(int likesCount) {
             this.likesCount = likesCount;
         }
+        public String getPlace() {
+        return place;
+    }
+
+        public void setPlace(String place) {
+        this.place = place;
+    }
 
         private String author_url;
         private int likesCount;
@@ -88,10 +96,10 @@ public class PostModal {
             this.timestamp = timestamp;
         }
 
-        public PostModal(String id, String media_type, String permalink, String media_url, String username,
+        public PostModal(String id, String place, String permalink, String media_url, String username,
                           String caption, String timestamp) {
             this.id = id;
-            this.media_type = media_type;
+            this.place = place;
             this.permalink = permalink;
             this.media_url = media_url;
             this.username = username;
