@@ -7,7 +7,17 @@ public class Post {
     String description;
     String url;
     String place;
-    Date date;
+    String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
     public String getName() {
         return name;
     }
@@ -45,11 +55,11 @@ public class Post {
 
 
 
-    public Post(String name, String url, String place, String description){
+    public Post(String name, String url, String place, String description,String date){
         this.name=name;
         this.url=url;
         this.place=place;
         this.description=description;
-
+        this.date=date;
     };
 }

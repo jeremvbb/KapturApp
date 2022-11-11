@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -31,7 +32,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class HomePage extends AppCompatActivity {
@@ -62,7 +66,10 @@ public class HomePage extends AppCompatActivity {
         disconnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
+                Intent switchA= new Intent (HomePage.this, AddPost.class);
+                startActivity(switchA);
+                finish();
+                /*FirebaseAuth.getInstance().signOut();
                 FirebaseUser mFireUser= mAuth.getCurrentUser();
                 System.out.println(mFireUser);
                 if(mFireUser==null){
@@ -71,7 +78,7 @@ public class HomePage extends AppCompatActivity {
                             SignIn.class);
                     startActivity(intent);
                     finish();
-                }
+                }*/
             }
         });
 // Create a reference with an initial file path and name
@@ -101,6 +108,7 @@ public class HomePage extends AppCompatActivity {
                         instaModalArrayList = new ArrayList<>();
                         String username = "username";
                         String caption;
+                        String date;
                         String timestamp = "timestamp";
                         for (String key : dataMap.keySet()) {
 
@@ -111,6 +119,7 @@ public class HomePage extends AppCompatActivity {
                             username = String.valueOf(userData.get("name"));
                             caption = String.valueOf(userData.get("description"));
                             place = String.valueOf(userData.get("place"));
+                            date = String.valueOf(userData.get("date"));
                             StorageReference imgRef= storageRef.child(String.valueOf(userData.get("url")));
                             Task<Uri> uri=imgRef.getDownloadUrl();
                             media_url=uri.toString();
@@ -118,6 +127,7 @@ public class HomePage extends AppCompatActivity {
                             String finalCaption = caption;
                             String finalUsername= username;
                             String finalPlace= place;
+                            String finalDate= date;
                             imgRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
@@ -125,7 +135,7 @@ public class HomePage extends AppCompatActivity {
 
                                     media_url = uri.toString();
                                     System.out.println(media_url);
-                                    PostModal instaModal = new PostModal(id, finalPlace, permalink, media_url, finalUsername, finalCaption, timestamp);
+                                    PostModal instaModal = new PostModal(id, finalPlace, permalink, media_url, finalUsername, finalCaption, finalDate);
 
                                     // below line is use to add modal
                                     // class to our array list.
@@ -256,6 +266,24 @@ public class HomePage extends AppCompatActivity {
 
                 // System.out.println(instaModalArrayList.get(0));
                 // below line we are creating an adapter class and adding our array list in it.
+
+
+                Collections.sort(instaModalArrayList, new Comparator<PostModal>() {
+                    public int compare(PostModal v1, PostModal v2) {
+                        try {
+                            System.out.println(v1.getTimestamp()+" "+v2.getTimestamp()+"     "+v1.getTimestamp().compareTo(v2.getTimestamp()));
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            return v1.getTimestamp().compareTo(v2.getTimestamp());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        return 1;
+                    }
+                });
+                Collections.reverse(instaModalArrayList);
                 PostAdapter adapter = new PostAdapter(instaModalArrayList, HomePage.this);
                 RecyclerView instRV = findViewById(R.id.idRVInstaFeeds);
 
@@ -269,12 +297,23 @@ public class HomePage extends AppCompatActivity {
                 // to our recycler view.
                 instRV.setAdapter(adapter);
                 progressBar.setVisibility(View.GONE);}
-        },1000);
+        },2000);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu,menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.profileitem:
+                Intent i = new Intent(this,Profile.class);
+                this.startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

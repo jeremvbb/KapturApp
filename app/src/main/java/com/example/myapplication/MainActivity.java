@@ -31,7 +31,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.UUID;
 
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         });
         rootnode = FirebaseDatabase.getInstance();
         reference = rootnode.getReference("Image");
-        test= findViewById(R.id.buttontest);
+        test= findViewById(R.id.btntest);
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -200,11 +199,12 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         imageUri=data.getData();
         rImage.setImageURI(imageUri);
-        uploadPicture();
+        //uploadPicture();
 
     }
 
-    private void uploadPicture() {
+
+   /* private void uploadPicture() {
         final String randomkey= UUID.randomUUID().toString();
         StorageReference imageRef=storageReference.child("image/"+randomkey);
         imageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
     public void isConnected(){
         FirebaseUser mFireUser= mAuth.getCurrentUser();
         if(mFireUser!=null){

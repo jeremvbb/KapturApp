@@ -103,12 +103,12 @@
         android:id="@+id/rImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRegister"
+        android:layout_below="@+id/btnPublish"
         android:layout_marginTop="-497dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/buttontest"
+        android:id="@+id/btntest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button" />
@@ -117,7 +117,7 @@
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRegister"
+        android:layout_below="@+id/btnPublish"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="160dp"

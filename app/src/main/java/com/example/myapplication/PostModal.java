@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class PostModal {
 
         // variables for storing data
@@ -88,8 +93,11 @@ public class PostModal {
             this.caption = caption;
         }
 
-        public String getTimestamp() {
-            return timestamp;
+        public Date getTimestamp() throws ParseException {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+            String currentDateandTime = sdf.format(new Date());
+            Date date1=sdf.parse(timestamp);
+            return date1;
         }
 
         public void setTimestamp(String timestamp) {
