@@ -312,6 +312,11 @@ public class HomePage extends AppCompatActivity {
                 Intent i = new Intent(this,Profile.class);
                 this.startActivity(i);
                 return true;
+
+            case R.id.placesitem:
+                 i = new Intent(this,Places.class);
+                this.startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
