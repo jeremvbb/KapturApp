@@ -62,21 +62,18 @@ public class MapFragment extends Fragment {
             @Override
             public void onMapReady(@NonNull GoogleMap googleMap) {
 
-
-
                 //Location myLocation = googleMap.getMyLocation();
                 LatLng currentpos= new LatLng(latitude, longitude);
                 MarkerOptions markerOptions= new MarkerOptions();
                 markerOptions.position(currentpos);
                 googleMap.clear();
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentpos,5));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentpos,10));
                 googleMap.addMarker(markerOptions);
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(@NonNull LatLng latLng) {
                         MarkerOptions markerOptions= new MarkerOptions();
                         markerOptions.position(latLng);
-                        System.out.println(latLng+"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
                         markerOptions.title(latLng.latitude+" KG"+ latLng.longitude);
                         googleMap.clear();
                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,20));
