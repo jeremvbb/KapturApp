@@ -10,7 +10,8 @@
         />
     <item
         android:id="@+id/profileitem"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_user"
+        android:textColorPrimary="@color/white"
         app:showAsAction="always|withText"
         android:title="Sign out"/>
 

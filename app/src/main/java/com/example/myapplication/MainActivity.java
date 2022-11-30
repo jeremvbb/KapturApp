@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         name = findViewById(R.id.firstnamelayout);
-        rImage= findViewById(R.id.rImage);
+
         lastname = findViewById(R.id.lastnamelayout);
         email = findViewById(R.id.emaillayout);
         storage= FirebaseStorage.getInstance();
@@ -140,94 +140,12 @@ public class MainActivity extends AppCompatActivity {
         });
         rootnode = FirebaseDatabase.getInstance();
         reference = rootnode.getReference("Image");
-        test= findViewById(R.id.btntest);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, 3);
 
-                /*
-                });
 
-              /*  reference.addListenerForSingleValueEvent(
-                        new ValueEventListener() {
-                            @Override
-                            public void onDataChange(
-                                    @NonNull DataSnapshot dataSnapshot) {
-                                // getting a DataSnapshot for the
-                                // location at the specified relative
-                                // path and getting in the link variable
-                                String link = dataSnapshot.getValue(
-                                        String.class);
 
-                                // loading that data into rImage
-                                // variable which is ImageView
-                                Picasso.get().load(link).into(rImage);
-                                Toast
-                                        .makeText(MainActivity.this,
-                                                " Loading Image",
-                                                Toast.LENGTH_SHORT).show();
-                            }
 
-                            // this will called when any problem
-                            // occurs in getting data
-                            @Override
-                            public void onCancelled(
-                                    @NonNull DatabaseError databaseError) {
-                                // we are showing that error message in
-                                // toast
-                                Toast
-                                        .makeText(MainActivity.this,
-                                                "Error Loading Image",
-                                                Toast.LENGTH_SHORT).show();
-
-                            }
-                        });*/
-            }
-        });
-
-        // Adding listener for a single change
-        // in the data at this location.
-        // this listener will triggered once
-        // with the value of the data at the location
 
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        super.onActivityResult(requestCode, resultCode, data);
-        imageUri=data.getData();
-        rImage.setImageURI(imageUri);
-        //uploadPicture();
-
-    }
-
-
-   /* private void uploadPicture() {
-        final String randomkey= UUID.randomUUID().toString();
-        StorageReference imageRef=storageReference.child("image/"+randomkey);
-        imageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(getApplicationContext(),"Image Uploaded",Toast.LENGTH_SHORT).show();
-                rootnode = FirebaseDatabase.getInstance();
-                reference = rootnode.getReference("Post");
-                String uName = name.getEditText().getText().toString();
-                String uUrl = "image/"+randomkey;
-                String uPlace = "Braga";
-                String uDesc = "Ceci est une description";
-                Post helperclass= new Post(uName,uUrl,uPlace,uDesc);
-                reference.child("post 2").setValue(helperclass);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(),"Image Not Uploaded",Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }*/
     public void isConnected(){
         FirebaseUser mFireUser= mAuth.getCurrentUser();
         if(mFireUser!=null){
