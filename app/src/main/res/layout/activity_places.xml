@@ -42,7 +42,19 @@
    <LinearLayout
        android:layout_width="409dp"
        android:layout_height="242dp"
+       android:layout_below="@id/toolbarplaces"
        android:orientation="vertical"
+       app:layout_constraintBottom_toTopOf="@+id/frame_layout"
+       app:layout_constraintTop_toBottomOf="@+id/toolbarplaces"
        tools:layout_editor_absoluteX="1dp"
-       tools:layout_editor_absoluteY="57dp"></LinearLayout>
+       >
+
+
+      <androidx.recyclerview.widget.RecyclerView
+
+          android:id="@+id/idRVPlaces"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

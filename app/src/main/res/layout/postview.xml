@@ -34,23 +34,13 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop" />
 
-    <!--text view to display likes count-->
-    <TextView
-        android:id="@+id/idTVLikes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idIVPost"
-        android:layout_margin="6dp"
-        android:padding="5dp"
-        android:text="likes"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
+
     <!--text view to display likes count-->
     <TextView
         android:id="@+id/idTVPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVLikes"
+        android:layout_below="@id/idIVPost"
         android:layout_margin="6dp"
         android:padding="5dp"
         android:text="likes"

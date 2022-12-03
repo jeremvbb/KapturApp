@@ -47,7 +47,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         holder.desctv.setText(modal.getCaption());
         holder.placeTv.setText(modal.getPlace());
         holder.placeTv.setTextColor(context.getResources().getColor(R.color.grey));
-        holder.likeTV.setText("" + modal.getLikesCount() + " likes");
+
         //Picasso.get().load(modal.getAuthor_url()).into(holder.authorIV);
     }
 
@@ -61,14 +61,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         //CircleImageView authorIV;
         private TextView authorTV;
         private ImageView postIV;
-        private TextView likeTV, desctv, placeTv;
+        private TextView  desctv, placeTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //authorIV = itemView.findViewById(R.id.idCVAuthor);
             authorTV = itemView.findViewById(R.id.idTVAuthorName);
             postIV = itemView.findViewById(R.id.idIVPost);
-            likeTV = itemView.findViewById(R.id.idTVLikes);
+
             desctv = itemView.findViewById(R.id.idTVPostDesc);
             placeTv= itemView.findViewById(R.id.idTVPlace);
         }
