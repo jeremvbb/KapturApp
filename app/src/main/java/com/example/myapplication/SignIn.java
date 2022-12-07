@@ -89,14 +89,12 @@ public class SignIn extends AppCompatActivity {
                                                             Toast.LENGTH_LONG)
                                                     .show();
 
-                                            // hide the progress bar
-                                            //progressbar.setVisibility(View.GONE);
                                         }
                                     }
                                 });
             }
             });
-        //rootnode = FirebaseDatabase.getInstance();
+
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

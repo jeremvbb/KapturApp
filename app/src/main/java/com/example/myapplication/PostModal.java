@@ -113,8 +113,7 @@ public class PostModal {
             this.username = username;
             this.caption = caption;
             this.timestamp = timestamp;
-           // this.author_url = author_url;
-            //this.likesCount = likesCount;
+
         }
 
 

@@ -103,14 +103,11 @@ public class MainActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                                     if (task.isSuccessful()) {
                                                         Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
-                                                        //progressBar.setVisibility(View.GONE);
 
-                                                        //Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                                                        //startActivity(intent);
                                                     }
                                                     else {
                                                         Toast.makeText(getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_LONG).show();
-                                                        //progressBar.setVisibility(View.GONE);
+
                                                     }
                                                 }
                                             });
@@ -126,15 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         });
-               /* if(reference.child(uName)!=null)
-                {
-                    reference.child(uName).setValue(helperClass);
-                    toast=Toast.makeText(getApplicationContext(),"account registered",Toast.LENGTH_SHORT);
-                }
-                else{
-                    toast=Toast.makeText(getApplicationContext(),"account already exists",Toast.LENGTH_SHORT);
-                }
-                toast.show();*/
+
 
             }
         });

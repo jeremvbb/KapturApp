@@ -19,17 +19,11 @@ import com.google.firebase.storage.StorageReference;
 
 public class Profile extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    TextInputLayout description,place;
-    Button btndisconnect;
-    Button btnPublish;
-    ImageView postImage;
-    DatabaseReference reference;
-    StorageReference storageReference;
-    FirebaseDatabase rootnode;
-    FirebaseStorage storage;
-    String username ;
 
-    Uri imageUri;
+    Button btndisconnect;
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(android.R.style.Theme_Black_NoTitleBar);

@@ -48,7 +48,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         holder.placeTv.setText(modal.getPlace());
         holder.placeTv.setTextColor(context.getResources().getColor(R.color.grey));
 
-        //Picasso.get().load(modal.getAuthor_url()).into(holder.authorIV);
     }
 
     @Override
@@ -65,7 +64,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            //authorIV = itemView.findViewById(R.id.idCVAuthor);
+
             authorTV = itemView.findViewById(R.id.idTVAuthorName);
             postIV = itemView.findViewById(R.id.idIVPost);
 
