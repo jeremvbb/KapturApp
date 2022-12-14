@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KapturApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnRegistername">Inscription</string>
+    <string name="SignInLink">Connexion</string>
+    <string name="RegisterPageTitle">Page Inscription</string>
+    <string name="FirstNameForm">Prénom</string>
+    <string name="LastNameForm">nom</string>
+    <string name="EmailForm">email</string>
+    <string name="PasswordForm">mot de passe</string>
+    <string name="SignInPageTitle">Page Connexion</string>
+    <string name="SignOut">deconnexion</string>
+    <string name="PostTitle">Ajouter un Post</string>
+    <string name="BtnLoadTxt">Charger</string>
+    <string name="BtnPublishTxt">Publier</string>
+    <string name="BtnAdd">Creer</string>
+</resources>

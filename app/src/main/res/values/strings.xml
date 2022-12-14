@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">KapturApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnRegistername">Register</string>
+    <string name="SignInLink">Sign In</string>
+    <string name="RegisterPageTitle">Register Page</string>
+    <string name="FirstNameForm">First Name</string>
+    <string name="LastNameForm">Last Name</string>
+    <string name="EmailForm">email</string>
+    <string name="PasswordForm">Password</string>
+    <string name="SignInPageTitle">Sign In Page</string>
+    <string name="SignOut">Sign Out</string>
+    <string name="PostTitle">Add A Post</string>
+    <string name="BtnLoadTxt">Load</string>
+    <string name="BtnPublishTxt">Publish</string>
+    <string name="BtnAdd">Add</string>
 </resources>

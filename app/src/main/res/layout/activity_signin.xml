@@ -14,21 +14,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Sign In Page"
+        android:text="@string/SignInPageTitle"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold" />
 
 
-
     <com.google.android.material.textfield.TextInputLayout
-        style=""
         android:id="@+id/emaillayout"
+        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signintext"
         android:layout_marginTop="120dp"
-        android:hint="email">
+        android:hint="@string/EmailForm">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
@@ -37,14 +36,15 @@
             android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
-        style=""
         android:id="@+id/passwordlayout"
+        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/emaillayout"
         android:layout_marginTop="20dp"
-        android:hint="password">
+        android:hint="@string/PasswordForm">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
@@ -66,7 +66,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="75dp"
         android:paddingBottom="10dp"
-        android:text="Sign In" />
+        android:text="@string/SignInLink" />
 
 
     <TextView
@@ -77,7 +77,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
-        android:text="Register"
+        android:text="@string/btnRegistername"
         android:textAlignment="center"
         android:textColor="@color/purple_500" />
 

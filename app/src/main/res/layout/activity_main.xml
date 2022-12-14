@@ -13,18 +13,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Register page"
+        android:text="@string/RegisterPageTitle"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style=""
         android:id="@+id/firstnamelayout"
+        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:hint="First name">
+        android:hint="@string/FirstNameForm">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstName"
@@ -35,13 +35,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style=""
         android:id="@+id/lastnamelayout"
+        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/firstnamelayout"
         android:layout_marginTop="20dp"
-        android:hint="Last name">
+        android:hint="@string/LastNameForm">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/lastName"
@@ -53,13 +53,13 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        style=""
         android:id="@+id/emaillayout"
+        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lastnamelayout"
         android:layout_marginTop="20dp"
-        android:hint="email">
+        android:hint="@string/EmailForm">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
@@ -68,19 +68,20 @@
             android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
-        style=""
         android:id="@+id/passwordlayout"
+        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/emaillayout"
-        android:layout_marginTop="20dp"
-        android:hint="password">
+        android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/PasswordForm"
             android:inputType="textPassword"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -97,8 +98,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="75dp"
         android:paddingBottom="10dp"
-        android:text="Register" />
-
+        android:text="@string/btnRegistername" />
 
 
     <TextView
@@ -109,7 +109,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
-        android:text="Sign In"
+        android:text="@string/SignInLink"
         android:textAlignment="center"
         android:textColor="@color/purple_500" />
 
